@@ -1,6 +1,6 @@
 Name:		texlive-zootaxa-bst
 Version:	50619
-Release:	1
+Release:	2
 Summary:	A BibTeX style for the journal Zootaxa
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/zootaxa-bst
