@@ -3,7 +3,7 @@ Version:	50619
 Release:	2
 Summary:	A BibTeX style for the journal Zootaxa
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/zootaxa-bst
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/zootaxa-bst
 License:	lppl1.3c
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/zootaxa-bst.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/zootaxa-bst.doc.r%{version}.tar.xz
