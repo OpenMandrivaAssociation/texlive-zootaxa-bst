@@ -1,41 +1,25 @@
-Name:		texlive-zootaxa-bst
-Version:	50619
-Release:	2
+%global tl_name zootaxa-bst
+%global tl_revision 76790
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.0
+Release:	%{tl_revision}.1
 Summary:	A BibTeX style for the journal Zootaxa
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/zootaxa-bst
+URL:		https://www.ctan.org/tex-archive/biblio/bibtex/contrib/zootaxa-bst
 License:	lppl1.3c
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/zootaxa-bst.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/zootaxa-bst.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/zootaxa-bst.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/zootaxa-bst.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package provides a .bst reference style file for the
-journal Zootaxa that publishes contributions in zoology and
-classification. This is a fork of apa.bst as provided by TeX
-Live since this style file resembled the most Zootaxa's own
-style. Further modifications were made to the code in order to
-generate in-text citations and bibliography sections
-appropriately.
+This package provides a .bst reference style file for the journal
+Zootaxa that publishes contributions in zoology and classification. This
+is a fork of apa.bst as provided by TeX Live since this style file
+resembled the most Zootaxa's own style. Further modifications were made
+to the code in order to generate in-text citations and bibliography
+sections appropriately.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/bibtex/bst/zootaxa-bst
-%doc %{_texmfdistdir}/doc/bibtex/zootaxa-bst
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
